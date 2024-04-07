@@ -3,10 +3,6 @@ extends CharacterBody2D
 @onready var highlight_clickable: HighlightClickable = $HighlightClickable
 @onready var game_field: TileMap = $"../GameField"
 
-var _width : float = 4.4
-var _max_width : float = 5
-var _time : float = 0
-
 var is_animation_work = false
 var should_draw = false
 
@@ -62,25 +58,5 @@ func _process(delta : float):
 	if moving_allow:
 		global_position = global_position.move_toward(moving_position, 200*delta)
 	
-	if is_animation_work:
-		animate_highliting(delta)
-	else:
-		_width = 2
-		queue_redraw()
-	
 func play_highlight_animation():
 	$AnimationPlayer.play("highlighting")
-
-func animate_highliting(delta):
-	_time += delta
-	_width = abs(sin(_time) * _max_width)
-	queue_redraw()
-
-func _draw():
-	if should_draw:
-		var center = Vector2(0, 0)
-		var radius = 20
-		var points = 30
-		var color = Color(255, 255, 255)
-		draw_arc(center, radius, 0, TAU, points, color, _width)
-				
