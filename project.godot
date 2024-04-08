@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Yard"
-run/main_scene="res://scene/game.tscn"
+run/main_scene="res://scene/game/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-HighlightManager="*res://scene/highlight_manager.tscn"
+HighlightManager="*res://manager/highlight/highlight_manager.tscn"
+StepsManager="*res://manager/steps/steps_manager.tscn"
+
+[display]
+
+window/size/viewport_height=1300
+window/stretch/scale=2.0
 
 [input]
 
