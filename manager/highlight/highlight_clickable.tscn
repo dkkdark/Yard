@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dova4fomm3pqw"]
 
-[ext_resource type="Script" path="res://highlight_clickable.gd" id="1_a3ecj"]
+[ext_resource type="Script" path="res://manager/highlight/highlight_clickable.gd" id="1_nfctl"]
 
 [node name="HighlightClickable" type="Area2D"]
 position = Vector2(0, 2)
-script = ExtResource("1_a3ecj")
+script = ExtResource("1_nfctl")

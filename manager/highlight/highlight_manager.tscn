@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dasdr3vj0lvbx"]
 
-[ext_resource type="Script" path="res://scene/highlight_manager.gd" id="1_vb86i"]
+[ext_resource type="Script" path="res://manager/highlight/highlight_manager.gd" id="1_vb86i"]
 
 [node name="HighlightManager" type="Node2D"]
 script = ExtResource("1_vb86i")

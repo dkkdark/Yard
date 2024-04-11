@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqeajxq665guf"]
+[gd_scene load_steps=11 format=3 uid="uid://dqeajxq665guf"]
 
-[ext_resource type="Shader" path="res://scene/sheep.gdshader" id="1_f4nap"]
-[ext_resource type="Script" path="res://scene/sheep.gd" id="1_nd2jc"]
-[ext_resource type="Texture2D" uid="uid://dp83dst5t2k7n" path="res://animals/sheep.png" id="1_tmsc8"]
-[ext_resource type="PackedScene" uid="uid://dova4fomm3pqw" path="res://scene/highlight_clickable.tscn" id="5_ovo2f"]
+[ext_resource type="Shader" path="res://scene/sheep/sheep.gdshader" id="1_f4nap"]
+[ext_resource type="Script" path="res://scene/sheep/sheep.gd" id="1_nd2jc"]
+[ext_resource type="PackedScene" uid="uid://dova4fomm3pqw" path="res://manager/highlight/highlight_clickable.tscn" id="2_jj2p2"]
+[ext_resource type="Texture2D" uid="uid://dp83dst5t2k7n" path="res://animals_picture/sheep.png" id="4_xqlh4"]
+[ext_resource type="PackedScene" uid="uid://6ndn5ikalmxx" path="res://manager/steps/steps_handler.tscn" id="5_an0fj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmjna"]
 height = 28.0
@@ -47,7 +48,7 @@ position = Vector2(6.58432e-14, -1)
 rotation = 1.57031
 shape = SubResource("CapsuleShape2D_dmjna")
 
-[node name="HighlightClickable" parent="." instance=ExtResource("5_ovo2f")]
+[node name="HighlightClickable" parent="." instance=ExtResource("2_jj2p2")]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HighlightClickable"]
@@ -59,9 +60,11 @@ debug_color = Color(0.662745, 0.482353, 0.501961, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_fq8q7")
 use_parent_material = true
-texture = ExtResource("1_tmsc8")
+texture = ExtResource("4_xqlh4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_pg4mc")
 }
+
+[node name="StepsHandler" parent="." instance=ExtResource("5_an0fj")]
